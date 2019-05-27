@@ -21,10 +21,16 @@ body {
   padding: 0.75rem 2.5rem;
   text-decoration: none;
   font-size: 1.5rem;
+  border-radius: 0.33rem;
   &:hover {
     color: #7768ae;
     background: #fff;
   }
+}
+
+.btn-small {
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
 }
 
 header {
@@ -65,6 +71,10 @@ header {
   display: flex;
   justify-content: center;
   border-bottom: #000 solid 0.25px;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 0 10px #333;
+  background: #fff;
   ul {
     display: flex;
     align-items: center;
@@ -91,14 +101,17 @@ header {
   }
 }
 
-#get-started {
-  background: orange;
-  height: 100vh;
+#services {
+  //   height: 100vh;
   .container {
     display: grid;
-    grid-template-areas: "title title" "box-1 box-2";
+    grid-template-columns: 50% 50%;
+    // grid-template-rows: 50% 50%;
+    grid-template-areas: "header header" "box1 box2";
+    grid-gap: 1.5rem;
+    padding-bottom: 100px;
     .title {
-      grid-area: title;
+      grid-area: header;
       text-align: center;
       h2 {
         font-size: 3rem;
@@ -108,15 +121,140 @@ header {
         line-height: 1.2rem;
       }
     }
-    .box-1 {
-      grid-area: box-1;
-      background: blue;
-      flex: 1;
+
+    div:nth-child(2) {
+      grid-area: box1;
+      ul {
+        list-style: none;
+        display: grid;
+        li {
+          display: grid;
+          grid-template-areas: "icon text1" ". text2";
+          padding-bottom: 1.25rem;
+          i {
+            grid-area: icon;
+          }
+          h3 {
+            text-transform: uppercase;
+            grid-area: text1;
+            margin: 0;
+            padding-left: 1.25rem;
+          }
+          p {
+            grid-area: text2;
+            color: #888888;
+            padding-left: 1.25rem;
+          }
+        }
+      }
     }
-    .box-2 {
-      grid-area: box-2;
-      background: yellow;
-      flex: 1;
+
+    div:nth-child(3) {
+      //   display: block;
+      grid-area: box2;
+      background: url("../img/laptop.jpg") center center/cover;
+      //   background: blue;
+      width: 100%;
+    }
+  }
+}
+
+#featured-work {
+  background: #fafafa;
+  .container {
+    display: flex;
+    padding: 1.27rem 0;
+    .phone-image {
+      background: url("../img/iphone.png") no-repeat center center/contain;
+      width: 50%;
+    }
+    div {
+      width: 50%;
+      h2 {
+        padding: 1.75rem 0;
+        font-size: 2rem;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      p {
+        padding: 1.75rem 0;
+        text-align: justify;
+      }
+      ul {
+        list-style: none;
+        li {
+          display: grid;
+          grid-template-areas: "icon text1" ". text2";
+          padding-bottom: 1.25rem;
+          i {
+            color: #888888;
+            grid-area: icon;
+          }
+          h3 {
+            padding-left: 1.25rem;
+            grid-area: text1;
+          }
+
+          p {
+            padding: 0.75rem 1.25rem;
+            grid-area: text2;
+          }
+        }
+      }
+    }
+  }
+}
+
+#portfolio {
+  padding: 4rem 0;
+  .container {
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      padding: 1rem 0;
+      color: #888888;
+    }
+    > ul {
+      display: flex;
+      list-style: none;
+      padding: 0 4rem;
+      padding-bottom: 3rem;
+      display: flex;
+      justify-content: space-evenly;
+      li {
+        display: inline;
+      }
+    }
+    .portfolio-list {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li {
+        text-align: center;
+        h5 {
+          text-transform: uppercase;
+        }
+        .portfolio-image {
+          cursor: pointer;
+          width: 250px;
+          background: center center/cover;
+          vertical-align: middle;
+          padding: 1rem;
+        }
+        .portfolio-image::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: "";
+          background: blue;
+          z-index: 3;
+          width: 100px;
+          height: 100px;
+        }
+      }
     }
   }
 }
