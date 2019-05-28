@@ -268,12 +268,12 @@
     </section>
 
     <!-- Buisiness banner -->
-    <div class="business-banner">
-      <h3>LET’S TALK BUSINESS.</h3>
-    </div>
 
     <!-- contact -->
     <section id="contact">
+      <div class="business-banner">
+        <h3>LET’S TALK BUSINESS.</h3>
+      </div>
       <div class="container">
         <div class="contact-information">
           <ul>
@@ -315,34 +315,28 @@
             <i class="fab fa-instagram"></i>
           </div>
         </div>
-        <div class="contact-form">
-          <form action="">
-            <!-- <label for="name">Name</label> -->
-            <input type="text" name="name" id="name" placeholder="Your name" />
-            <!-- <label for="email">Email</label> -->
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Your email"
-            />
-            <!-- <label for="subject">Subject</label> -->
-            <input
-              type="text"
-              name="subject"
-              id="subject"
-              placeholder="Subject"
-            />
-            <!-- <label for="message">Message</label> -->
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Message"
-              rows="6"
-            ></textarea>
-            <input type="submit" value="Submit" class="btn" />
-          </form>
-        </div>
+        <form class="contact-form">
+          <input type="text" name="name" id="name" placeholder="Your name" />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your email"
+          />
+          <input
+            type="text"
+            name="subject"
+            id="subject"
+            placeholder="Subject"
+          />
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Message"
+            rows="6"
+          ></textarea>
+          <input type="submit" value="Submit" class="btn" />
+        </form>
       </div>
     </section>
 
