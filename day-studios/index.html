@@ -20,7 +20,7 @@
     <title>Day Studio | Lorem ipsum dolor sit.</title>
   </head>
   <body>
-    <header id="#home">
+    <header id="home">
       <div>
         <img src="./img/logo_123.png" alt="logo" />
         <h1>Welcome To Day Studio</h1>
@@ -36,13 +36,13 @@
     <nav id="navbar">
       <div class="continer">
         <ul>
-          <li><a href="#"> Home</a></li>
+          <li><a href="#home"> Home</a></li>
           <li><a href="#services"> Services</a></li>
           <li><a href="#featured-work"> Portfolio</a></li>
-          <li><img src="./img/logo_123.png" alt="logo" /></li>
-          <li><a href="#"> Clients</a></li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#"> Contact</a></li>
+          <li class="no-hover"><img src="./img/logo_123.png" alt="logo" /></li>
+          <li><a href="#clients"> Clients</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact"> Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -175,11 +175,69 @@
           </li>
           <li>
             <img src="./img/portfolio/port-6.jpg" class="portfolio-image" />
-            <h5>Laliquid id.</h5>
+            <!-- <h5>Laliquid id.</h5> -->
             <p>Officiis explicabo!</p>
           </li>
         </ul>
       </div>
     </section>
+
+    <!-- Clients -->
+    <section id="clients">
+      <div class="container">
+        <i class="fas fa-quote-right fa-3x quote"></i>
+        <h3>
+          It was such a great great pleasure to work with this great team!
+        </h3>
+        <img src="./img/profile-1.jpg" alt="" />
+        <h4>Jimbo Jones</h4>
+        <p>King of the Jungle Inc.</p>
+      </div>
+      <div class="client-banner">
+        <div class="container">
+          <ul>
+            <li>
+              <a href="" class="c-logo1">
+                <img src="./img/c-logos/c-logo1.png" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="" class="c-logo2">
+                <img src="./img/c-logos/c-logo2.png" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="" class="c-logo3">
+                <img src="./img/c-logos/c-logo3.png" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="" class="c-logo4">
+                <img src="./img/c-logos/c-logo4.png" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="" class="c-logo5">
+                <img src="./img/c-logos/c-logo5.png" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+      <img src="./img/logo_white_123.png" alt="" />
+      <p>&copy; Day Studio. All Rights Reserved</p>
+    </footer>
+    <!-- JQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- JS MAIN -->
+    <script src="./js/main.js"></script>
   </body>
 </html>
