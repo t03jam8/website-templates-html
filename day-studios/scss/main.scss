@@ -1,70 +1,88 @@
+@import "utils";
+@import "variables";
+@import "functions";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: 0;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+a {
+  text-decoration: none;
 }
 
-.container {
-  max-width: 960px;
-  margin: auto;
-  overflow: hidden;
+p {
+  line-height: 1.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: $font-family;
+}
+
+// header height
+
+h1 {
+  font-size: 4rem;
+  padding: 1.5rem 0;
+}
+
+h2 {
+  font-size: 3rem;
+  padding: 1.5rem 0;
+}
+
+h3 {
+  font-size: 2rem;
+  padding: 1.5rem 0;
+}
+
+h4 {
+  font-size: 1.3rem;
+  padding-bottom: 0.75rem;
+  padding-top: 0.25rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+p {
+  padding-bottom: 1rem;
+}
+
+.px-1 {
   padding: 0 1rem;
 }
 
-.btn {
-  display: inline-block;
-  background: #7768ae;
-  color: #fff;
-  padding: 0.75rem 2.5rem;
-  text-decoration: none;
-  font-size: 1.5rem;
-  border-radius: 0.33rem;
-  cursor: pointer;
-  &:hover {
-    color: #7768ae;
-    background: #fff;
-  }
+.py-1 {
+  padding: 1rem 0;
 }
 
-.btn-small {
-  padding: 0.5rem 2rem;
-  font-size: 1rem;
+.no-hover {
+  pointer-events: none;
+}
+
+.center {
+  text-align: center;
 }
 
 header {
-  &::before {
-    content: "";
-    background: url("../img/day-1.jpg") no-repeat center center/cover;
-    position: absolute;
-    // opacity: calc(1/2);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
+  @include imageBefore("../img/day-1.jpg", "dark");
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
+  color: $color-white;
   div {
     img {
       padding: 3rem 0;
       width: 100px;
-    }
-
-    h1 {
-      padding: 1.5rem 0;
-    }
-    h4 {
-      margin: 1.5rem 0;
     }
   }
 }
@@ -81,22 +99,17 @@ header {
   ul {
     display: flex;
     align-items: center;
-    list-style: none;
     li {
       padding: 1rem 1rem;
       margin: 0 1.5rem;
+      cursor: pointer;
       &:hover {
-        background: #7768ae;
-        cursor: pointer;
-        a {
-          color: #fff;
-        }
+        background: $color-primary;
       }
       img {
         width: 50px;
       }
       a {
-        text-decoration: none;
         text-align: center;
         color: #000;
       }
@@ -105,12 +118,12 @@ header {
 }
 
 #services {
+  @include sectionPadding;
   .container {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-areas: "header header" "box1 box2";
     grid-gap: 1.5rem;
-    padding-bottom: 100px;
     .title {
       grid-area: header;
       text-align: center;
@@ -118,16 +131,11 @@ header {
         font-size: 3rem;
         padding: 1.5rem 0;
       }
-      p {
-        line-height: 1.2rem;
-      }
     }
 
     div:nth-child(2) {
       grid-area: box1;
       ul {
-        list-style: none;
-        display: grid;
         li {
           display: grid;
           grid-template-areas: "icon text1" ". text2";
@@ -135,15 +143,9 @@ header {
           i {
             grid-area: icon;
           }
-          h3 {
-            text-transform: uppercase;
-            grid-area: text1;
-            margin: 0;
-            padding-left: 1.25rem;
-          }
           p {
             grid-area: text2;
-            color: #888888;
+            color: $color-dark;
             padding-left: 1.25rem;
           }
         }
@@ -152,48 +154,36 @@ header {
 
     div:nth-child(3) {
       grid-area: box2;
-      background: url("../img/laptop.jpg") center center/cover;
+      @include image("../img/laptop.jpg", "cover");
       width: 100%;
     }
   }
 }
 
 #featured-work {
-  background: #fafafa;
+  @include sectionPadding;
+  background: $color-light;
   .container {
     display: flex;
-    padding: 1.27rem 0;
     .phone-image {
-      background: url("../img/iphone.png") no-repeat center center/contain;
+      @include image("../img/iphone.png", "contain");
       width: 50%;
     }
     div {
       width: 50%;
-      h2 {
-        padding: 1.75rem 0;
-        font-size: 2rem;
-        text-align: center;
-        text-transform: uppercase;
-      }
       p {
         padding: 1.75rem 0;
         text-align: justify;
       }
       ul {
-        list-style: none;
         li {
           display: grid;
           grid-template-areas: "icon text1" ". text2";
           padding-bottom: 1.25rem;
           i {
-            color: #888888;
+            color: $color-dark;
             grid-area: icon;
           }
-          h3 {
-            padding-left: 1.25rem;
-            grid-area: text1;
-          }
-
           p {
             padding: 0.75rem 1.25rem;
             grid-area: text2;
@@ -204,23 +194,14 @@ header {
   }
 }
 
-.no-hover {
-  pointer-events: none;
-}
-
 #portfolio {
-  padding: 4rem 0;
+  @include sectionPadding;
   .container {
-    h1 {
-      font-size: 3rem;
-    }
     p {
-      padding: 1rem 0;
-      color: #888888;
+      color: $color-dark;
     }
     > ul {
       display: flex;
-      list-style: none;
       padding: 0 4rem;
       padding-bottom: 3rem;
       display: flex;
@@ -232,80 +213,38 @@ header {
     .portfolio-list {
       display: flex;
       flex-wrap: wrap;
-      padding: 0;
-      margin: 0;
-      list-style: none;
       li {
         text-align: center;
-        h5 {
-          text-transform: uppercase;
-        }
         .portfolio-image {
           cursor: pointer;
           width: 250px;
           background: center center/cover;
           vertical-align: middle;
-          padding: 1rem;
-        }
-        .portfolio-image::after {
-          position: absolute;
-          top: 0;
-          left: 0;
-          content: "";
-          background: blue;
-          z-index: 3;
-          width: 100px;
-          height: 100px;
         }
       }
     }
   }
 }
 
-#main-footer {
-  padding: 3rem 2rem 0 0;
-  background: #7768ae;
-  color: #fafafa;
-  text-align: center;
-  img {
-    width: 75px;
-    padding: 1rem 0;
-  }
-  p {
-    text-align: center;
-    padding: 1.2rem;
-  }
-}
-
 #clients {
-  background: rgba(0, 0, 0, 0.6);
+  @include imageBefore("../img/city-dark.jpg", "dark");
   color: #fff;
-  position: relative;
-  &::before {
-    content: "";
-    background: url("../img/city-dark.jpg") no-repeat center center/cover;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
   .container {
-    padding: 4rem 0;
+    @include sectionPadding;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     text-align: center;
     i {
-      color: #7768ae;
+      color: $color-primary;
       padding: 1.5rem 1.5rem;
-      border: 3px solid #7768ae;
+      border: 3px solid $color-primary;
       border-radius: 50%;
       align-self: center;
     }
     .quote {
       margin: 2rem 0;
-      color: #7768ae;
+      color: $color-primary;
     }
     > img {
       align-self: center;
@@ -318,47 +257,28 @@ header {
   }
   .client-banner {
     padding: 1rem 0;
-    background: #7768ae;
-    .container {
-      ul {
-        display: flex;
-        justify-content: space-between;
-        li {
-          list-style: none;
-          a {
-            text-decoration: none;
-          }
-        }
-      }
+    background: $color-primary;
+    ul {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }
 
 #team {
-  padding: 1rem 0;
+  @include sectionPadding;
   .container {
-    h2 {
-      font-size: 3rem;
-      text-align: center;
-      padding: 2rem 0;
-    }
     p {
       text-align: center;
     }
     ul {
       display: flex;
-      list-style: none;
       li {
         padding: 2rem 0;
         display: flex;
         flex: 1;
         justify-content: center;
         flex-direction: column;
-        h4 {
-          padding-top: 1rem;
-          font-size: 1.3rem;
-          text-align: center;
-        }
         p {
           padding: 0.25rem 0;
         }
@@ -373,83 +293,49 @@ header {
 }
 
 .business-banner {
-  background: rgba(0, 0, 0, 0.5);
-  position: relative;
+  @include imageBefore("../img/circle-building.jpg", "dark");
   width: 100%;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  &::before {
-    content: "";
-    position: absolute;
-    background: url("../img/circle-building.jpg") no-repeat center center/cover;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-  }
-  h3 {
-    text-transform: uppercase;
-    font-size: 3rem;
-    color: #fff;
-  }
 }
 
 #contact {
-  position: relative;
-  background: rgba(225, 225, 255, 0.5);
-  &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    background: url("../img/world-map.jpeg") no-repeat center center/cover;
-    z-index: -1;
-    opacity: 0.5;
-  }
+  @include imageBefore("../img/world-map.jpeg", "light");
   .container {
+    @include sectionPadding;
     display: flex;
-    padding: 3rem 0;
     .contact-information {
       flex: 1;
-      ul {
-        li {
-          display: grid;
-          grid-template-areas: "icon title text" ". . text";
-          grid-template-columns: 0.5fr 1.5fr 5fr;
-          padding: 0.75rem 0;
-          h5 {
-            font-size: 1.25rem;
-          }
-          i {
-            font-size: 1.25rem;
-          }
-          p {
-            font-size: 1.1rem;
-          }
+      li {
+        display: grid;
+        grid-template-areas: "icon title text" ". . text";
+        grid-template-columns: 0.5fr 1.5fr 5fr;
+        padding: 0.75rem 0;
+        i {
+          font-size: 1.25rem;
+        }
+        p {
+          font-size: 1.1rem;
         }
       }
       .social {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
         padding: 3rem 5rem;
         i {
           font-size: 2rem;
           cursor: pointer;
           border-radius: 50%;
           color: #fff;
-          background: #7768ae;
+          background: $color-primary;
           width: 2rem;
           padding: 0.333rem 0.333rem;
           align-self: center;
           text-align: center;
           &:hover {
-            color: #7768ae;
+            color: $color-primary;
             background: #fafafa;
           }
         }
@@ -461,29 +347,21 @@ header {
         width: 93%;
         margin-top: 1.5rem;
       }
-      label {
-        display: block;
-        padding: 0.5rem 0;
-      }
-      input,
-      textarea {
-        display: block;
-        width: 90%;
-        border: 1px solid transparent;
-        padding: 0.5rem 0.5rem;
-        font-size: 1rem;
-        outline: none;
-        border-radius: 0.5rem;
-        margin: 1.2rem 0;
-        &:focus {
-          border: 1px solid #7768ae;
-          box-shadow: 0 0 5px #7768ae;
-        }
-      }
     }
   }
 }
 
-.bold {
-  font-weight: bold;
+#main-footer {
+  @include sectionPadding;
+  background: $color-primary;
+  color: $color-light;
+  text-align: center;
+  img {
+    width: 75px;
+    padding: 1rem 0;
+  }
+  p {
+    text-align: center;
+    padding: 1.2rem;
+  }
 }

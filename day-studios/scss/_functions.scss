@@ -1,0 +1,35 @@
+@mixin imageBefore($imageUrl, $shade) {
+  @if $shade == "dark" {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
+  @if $shade == "light" {
+    background: rgba(225, 225, 225, 0.5);
+    color: #333;
+  }
+  position: relative;
+  &::before {
+    content: "";
+    background: url($imageUrl) no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+@mixin image($imageUrl, $pos) {
+  @if ($pos == "contain") {
+    background: url($imageUrl) no-repeat center center/contain;
+  }
+
+  @if ($pos == "cover") {
+    background: url($imageUrl) no-repeat center center/cover;
+  }
+}
+
+@mixin sectionPadding {
+  padding: 3rem 0;
+}
