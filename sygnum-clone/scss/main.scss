@@ -1,5 +1,5 @@
-// $color-primary: #ff3e5f;
-$color-primary: #01c38d;
+$color-primary: #ff3e5f;
+// $color-primary: #01c38d;
 $off-green: #ecf2f0;
 * {
   padding: 0;
@@ -83,7 +83,6 @@ $off-green: #ecf2f0;
 
       ul {
         display: none;
-        // display: flex;
         flex-direction: column;
         li {
           display: block;
@@ -238,6 +237,69 @@ $off-green: #ecf2f0;
       outline: none;
       padding: 0.5rem;
       font-size: 1rem;
+    }
+  }
+}
+
+#footer {
+  background: #000;
+  color: #fff;
+  display: grid;
+  grid-template-areas: "address address" "info follow";
+  grid-template-columns: 50% 50%;
+  .address {
+    grid-area: address;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    p {
+      padding: 3rem 3rem;
+      font-size: 1.5rem;
+    }
+  }
+  .policy-info {
+    grid-area: info;
+    color: #333;
+    li {
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  .contact-info {
+    grid-area: follow;
+    display: flex;
+    justify-content: flex-end;
+    color: #ddd;
+    li:not(:last-child) {
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    li:last-child {
+      display: flex;
+      align-items: center;
+      p {
+        &:hover {
+          color: $color-primary;
+        }
+      }
+      i {
+        padding: 0 1rem;
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+
+  ul {
+    cursor: pointer;
+    display: flex;
+    list-style: none;
+    li {
+      padding: 1rem 2rem;
     }
   }
 }

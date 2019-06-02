@@ -8,7 +8,7 @@
   display: inline-block;
   padding: 0.5rem 0.75rem;
   color: #fff;
-  background: #01c38d;
+  background: #ff3e5f;
   text-decoration: none; }
 
 .container {
@@ -59,9 +59,9 @@
           transition: width 0.5s;
           width: 0px;
           height: 1px;
-          background: #01c38d; }
+          background: #ff3e5f; }
       #navbar ul li p:hover {
-        color: #01c38d; }
+        color: #ff3e5f; }
         #navbar ul li p:hover:before {
           width: 100px; }
       #navbar ul li ul {
@@ -72,7 +72,7 @@
           font-size: 0.75rem;
           color: #888; }
           #navbar ul li ul li:hover {
-            color: #01c38d; }
+            color: #ff3e5f; }
 
 .info .container {
   display: grid;
@@ -86,7 +86,7 @@
     font-size: 6rem;
     text-align: center;
     font-weight: 200;
-    color: #01c38d;
+    color: #ff3e5f;
     align-self: flex-end;
     line-height: 7rem; }
   .info .container div {
@@ -109,10 +109,10 @@
         transition: width 0.5s;
         width: 0px;
         height: 1px;
-        background: #01c38d;
+        background: #ff3e5f;
         z-index: 2; }
       .info .container div a:hover {
-        color: #01c38d; }
+        color: #ff3e5f; }
         .info .container div a:hover:before {
           width: calc(100% + 50px); }
 
@@ -139,7 +139,7 @@
         cursor: pointer;
         line-height: 2rem; }
         #feed .container ul li:hover {
-          color: #01c38d; }
+          color: #ff3e5f; }
         #feed .container ul li p:first-child {
           font-size: 1.5rem;
           color: #333;
@@ -153,7 +153,7 @@
 #register {
   color: #fff;
   font-size: 1.5rem;
-  background: #01c38d;
+  background: #ff3e5f;
   padding: 3rem;
   display: flex;
   justify-content: center;
@@ -169,7 +169,7 @@
     #register form input[type="submit"] {
       cursor: pointer;
       visibility: hidden;
-      background: #01c38d;
+      background: #ff3e5f;
       outline: none;
       border: none;
       color: white;
@@ -180,9 +180,51 @@
       visibility: visible; }
     #register form input[type="text"] {
       color: #fff;
-      background: #01c38d;
+      background: #ff3e5f;
       width: 400px;
       border: none;
       outline: none;
       padding: 0.5rem;
       font-size: 1rem; }
+
+#footer {
+  background: #000;
+  color: #fff;
+  display: grid;
+  grid-template-areas: "address address" "info follow";
+  grid-template-columns: 50% 50%; }
+  #footer .address {
+    grid-area: address;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center; }
+    #footer .address p {
+      padding: 3rem 3rem;
+      font-size: 1.5rem; }
+  #footer .policy-info {
+    grid-area: info;
+    color: #333; }
+    #footer .policy-info li:hover {
+      color: #fff; }
+  #footer .contact-info {
+    grid-area: follow;
+    display: flex;
+    justify-content: flex-end;
+    color: #ddd; }
+    #footer .contact-info li:not(:last-child):hover {
+      color: #ff3e5f; }
+    #footer .contact-info li:last-child {
+      display: flex;
+      align-items: center; }
+      #footer .contact-info li:last-child p:hover {
+        color: #ff3e5f; }
+      #footer .contact-info li:last-child i {
+        padding: 0 1rem; }
+        #footer .contact-info li:last-child i:hover {
+          color: #ff3e5f; }
+  #footer ul {
+    cursor: pointer;
+    display: flex;
+    list-style: none; }
+    #footer ul li {
+      padding: 1rem 2rem; }
