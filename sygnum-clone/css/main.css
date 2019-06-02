@@ -1,0 +1,115 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: none;
+  font-family: "Source Sans Pro", sans-serif; }
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  color: #fff;
+  background: #ff3e5f;
+  text-decoration: none; }
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden; }
+
+#navbar {
+  position: sticky;
+  padding: 1rem 0;
+  display: flex;
+  font-family: "Source Serif Pro", serif;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px #ddd solid;
+  box-shadow: 0 2px 5px #ddd;
+  background: #fafafa; }
+  #navbar .logo {
+    display: flex;
+    align-items: center; }
+  #navbar .btn {
+    margin: 0 3rem; }
+  #navbar .logo img {
+    width: 2rem;
+    height: 2rem;
+    padding-left: 0.5rem; }
+  #navbar .logo h3 {
+    font-size: 2rem;
+    padding-left: 0.5rem; }
+  #navbar ul {
+    flex: 10;
+    list-style: none;
+    display: flex; }
+    #navbar ul li {
+      display: inline-block;
+      padding: 0 2rem;
+      font-size: 1.2rem;
+      cursor: pointer; }
+      #navbar ul li p {
+        position: relative;
+        text-align: start; }
+        #navbar ul li p:before {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          content: "";
+          transition: width 0.5s;
+          width: 0px;
+          height: 1px;
+          background: #ff3e5f; }
+      #navbar ul li p:hover {
+        color: #ff3e5f; }
+        #navbar ul li p:hover:before {
+          width: 100px; }
+      #navbar ul li ul {
+        display: none;
+        flex-direction: column; }
+        #navbar ul li ul li {
+          display: block;
+          font-size: 0.75rem;
+          color: #888; }
+          #navbar ul li ul li:hover {
+            color: #ff3e5f; }
+
+#about .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "header header" ". text";
+  height: 50vh; }
+  #about .container h1 {
+    padding-top: 3rem;
+    grid-area: header;
+    font-size: 6rem;
+    text-align: center;
+    font-weight: 200;
+    color: #ff3e5f;
+    align-self: flex-end;
+    line-height: 7rem; }
+  #about .container div {
+    padding-top: 3rem;
+    grid-area: text;
+    align-self: flex-start;
+    line-height: 2rem; }
+    #about .container div a {
+      font-size: 1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #ddd;
+      position: relative;
+      text-align: start; }
+      #about .container div a:before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        transition: width 0.5s;
+        width: 0px;
+        height: 1px;
+        background: #ff3e5f;
+        z-index: 2; }
+      #about .container div a:hover {
+        color: #ff3e5f; }
+        #about .container div a:hover:before {
+          width: 100px; }
