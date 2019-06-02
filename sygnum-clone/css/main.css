@@ -8,7 +8,7 @@
   display: inline-block;
   padding: 0.5rem 0.75rem;
   color: #fff;
-  background: #ff3e5f;
+  background: #01c38d;
   text-decoration: none; }
 
 .container {
@@ -17,15 +17,16 @@
   overflow: hidden; }
 
 #navbar {
-  position: sticky;
+  position: fixed;
+  width: 100vw;
   padding: 1rem 0;
   display: flex;
   font-family: "Source Serif Pro", serif;
   justify-content: space-around;
   align-items: center;
+  background: #fff;
   border-bottom: 1px #ddd solid;
-  box-shadow: 0 2px 5px #ddd;
-  background: #fafafa; }
+  box-shadow: 0 2px 5px #ddd; }
   #navbar .logo {
     display: flex;
     align-items: center; }
@@ -58,9 +59,9 @@
           transition: width 0.5s;
           width: 0px;
           height: 1px;
-          background: #ff3e5f; }
+          background: #01c38d; }
       #navbar ul li p:hover {
-        color: #ff3e5f; }
+        color: #01c38d; }
         #navbar ul li p:hover:before {
           width: 100px; }
       #navbar ul li ul {
@@ -71,35 +72,36 @@
           font-size: 0.75rem;
           color: #888; }
           #navbar ul li ul li:hover {
-            color: #ff3e5f; }
+            color: #01c38d; }
 
-#about .container {
+.info .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr 4fr;
   grid-template-areas: "header header" ". text";
-  height: 50vh; }
-  #about .container h1 {
+  height: 100vh; }
+  .info .container h1 {
     padding-top: 3rem;
     grid-area: header;
     font-size: 6rem;
     text-align: center;
     font-weight: 200;
-    color: #ff3e5f;
+    color: #01c38d;
     align-self: flex-end;
     line-height: 7rem; }
-  #about .container div {
-    padding-top: 3rem;
+  .info .container div {
+    padding-top: 4rem;
     grid-area: text;
     align-self: flex-start;
-    line-height: 2rem; }
-    #about .container div a {
-      font-size: 1rem;
+    line-height: 2rem;
+    font-size: 1.25rem; }
+    .info .container div a {
       text-decoration: none;
       text-transform: uppercase;
       color: #ddd;
       position: relative;
       text-align: start; }
-      #about .container div a:before {
+      .info .container div a:before {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -107,9 +109,80 @@
         transition: width 0.5s;
         width: 0px;
         height: 1px;
-        background: #ff3e5f;
+        background: #01c38d;
         z-index: 2; }
-      #about .container div a:hover {
-        color: #ff3e5f; }
-        #about .container div a:hover:before {
-          width: 100px; }
+      .info .container div a:hover {
+        color: #01c38d; }
+        .info .container div a:hover:before {
+          width: calc(100% + 50px); }
+
+#feed {
+  background: #ecf2f0; }
+  #feed .container {
+    display: static; }
+    #feed .container ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 2fr 1fr 1fr;
+      grid-template-areas: ". header" "news1 news2" "news3 news4";
+      grid-gap: 2rem;
+      list-style: none; }
+      #feed .container ul .news1 {
+        grid-area: news1; }
+      #feed .container ul .news2 {
+        grid-area: news2; }
+      #feed .container ul .news3 {
+        grid-area: news3; }
+      #feed .container ul .news4 {
+        grid-area: news4; }
+      #feed .container ul li {
+        cursor: pointer;
+        line-height: 2rem; }
+        #feed .container ul li:hover {
+          color: #01c38d; }
+        #feed .container ul li p:first-child {
+          font-size: 1.5rem;
+          color: #333;
+          font-weight: 200; }
+      #feed .container ul .news-header {
+        align-self: center;
+        line-height: 4rem;
+        grid-area: header;
+        font-size: 3rem; }
+
+#register {
+  color: #fff;
+  font-size: 1.5rem;
+  background: #01c38d;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  #register h3 {
+    font-weight: 200;
+    margin-bottom: 40px; }
+  #register form {
+    padding: 1rem;
+    border: 1px white solid;
+    display: flex; }
+    #register form input[type="submit"] {
+      cursor: pointer;
+      visibility: hidden;
+      background: #01c38d;
+      outline: none;
+      border: none;
+      color: white;
+      font-size: 20px; }
+      #register form input[type="submit"]:hover {
+        transform: scale(1.2); }
+    #register form:valid input[type="submit"] {
+      visibility: visible; }
+    #register form input[type="text"] {
+      color: #fff;
+      background: #01c38d;
+      width: 400px;
+      border: none;
+      outline: none;
+      padding: 0.5rem;
+      font-size: 1rem; }
