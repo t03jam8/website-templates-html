@@ -279,7 +279,10 @@ header {
       #team .container ul li img {
         align-self: center;
         border-radius: 50%;
-        width: 200px; }
+        width: 200px;
+        background: black; }
+        #team .container ul li img:hover {
+          opacity: 0.2; }
 
 .business-banner {
   background: rgba(0, 0, 0, 0.5);

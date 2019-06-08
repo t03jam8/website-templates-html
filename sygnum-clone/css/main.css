@@ -181,10 +181,10 @@
     #register form input[type="text"] {
       color: #fff;
       background: #ff3e5f;
-      width: 400px;
+      width: 450px;
       border: none;
       outline: none;
-      padding: 0.5rem;
+      padding: 0.25rem;
       font-size: 1rem; }
 
 #footer {
@@ -221,7 +221,7 @@
       #footer .contact-info li:last-child i {
         padding: 0 1rem; }
         #footer .contact-info li:last-child i:hover {
-          color: #ff3e5f; }
+          transform: scale(1.2); }
   #footer ul {
     cursor: pointer;
     display: flex;

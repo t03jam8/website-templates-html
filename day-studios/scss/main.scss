@@ -282,10 +282,15 @@ header {
         p {
           padding: 0.25rem 0;
         }
+
         img {
           align-self: center;
           border-radius: 50%;
           width: 200px;
+          background: black;
+          &:hover {
+            opacity: 0.2;
+          }
         }
       }
     }

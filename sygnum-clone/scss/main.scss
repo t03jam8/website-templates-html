@@ -232,10 +232,10 @@ $off-green: #ecf2f0;
     input[type="text"] {
       color: #fff;
       background: $color-primary;
-      width: 400px;
+      width: 450px;
       border: none;
       outline: none;
-      padding: 0.5rem;
+      padding: 0.25rem;
       font-size: 1rem;
     }
   }
@@ -288,7 +288,7 @@ $off-green: #ecf2f0;
       i {
         padding: 0 1rem;
         &:hover {
-          color: $color-primary;
+          transform: scale(1.2);
         }
       }
     }
